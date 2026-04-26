@@ -10,14 +10,23 @@
       "submitted_at": "2024-01-01T00:00:00Z"
     },
     {
+      "username": "sanskarladkat",
+      "r2_score": 0.821479,
+      "pr_number": 3,
+      "pr_url": "https://github.com/SubhajitDolai/admission-prediction/pull/3",
+      "submitted_at": "2026-04-26T16:48:28.052579Z",
+      "is_baseline": false,
+      "rank": 2
+    },
+    {
       "username": "SubhajitDolai",
       "r2_score": 0.818843,
       "pr_number": 1,
       "pr_url": "https://github.com/SubhajitDolai/admission-prediction/pull/1",
       "submitted_at": "2026-04-26T15:46:56.187872Z",
       "is_baseline": false,
-      "rank": 2
+      "rank": 3
     }
   ],
-  "last_updated": "2026-04-26T15:46:56.187882Z"
+  "last_updated": "2026-04-26T16:48:28.052590Z"
 }
