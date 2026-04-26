@@ -1,7 +1,7 @@
 name: Update ML Leaderboard
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize]
     paths:
       - '**.ipynb'
