@@ -36,7 +36,8 @@ jobs:
           jupyter nbconvert --to notebook --execute "Admission prediction.ipynb" --output "Executed_Admission_prediction.ipynb"
           
           # Extract the R2 score
-          SCORE=$(grep -o 'LEADERBOARD_R2_SCORE:[0-9.]*' "Executed_Admission_prediction.ipynb" | tail -n 1 | cut -d ':' -f 2)
+          # The regex needs to handle cases where there are multiple matches (code block vs output)
+          SCORE=$(grep -o 'LEADERBOARD_R2_SCORE:[0-9]\{1,\}\.[0-9]\{1,\}' "Executed_Admission_prediction.ipynb" | head -n 1 | cut -d ':' -f 2)
           echo "Extracted score: $SCORE"
           
           if [ -z "$SCORE" ]; then
