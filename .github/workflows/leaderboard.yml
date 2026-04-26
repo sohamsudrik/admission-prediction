@@ -117,10 +117,13 @@ jobs:
           ' "${{ steps.compute.outputs.score }}" "${{ github.event.pull_request.user.login }}" "${{ github.event.pull_request.number }}" "${{ github.event.pull_request.html_url }}"
 
       - name: Commit and Push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cd main-branch
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
           git add "leaderboard.json"
           git commit -m "Update leaderboard for PR #${{ github.event.pull_request.number }}" || echo "No changes to commit"
           git push
